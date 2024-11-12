@@ -1,18 +1,16 @@
-<body></body>
+<body style="background: purple; color:white;"></body>
 <script>
-    const bugs = [];
-
+    const flakes = [];
     function add() {
-        const bug = document.createElement("div");
-        bug.setAttribute("style", `
+        const flake = document.createElement("div");
+        flake.setAttribute("style", `
             position:absolute;
-            color: saddlebrown;
             left: ${Math.random() * 100}vw;
             top: ${0}vh;
         `);
-        bug.innerHTML = "*"; //SPLAT
-        document.body.appendChild(bug);
-        bugs.push(bug);
+        flake.innerHTML = "*"; //SPLAT
+        document.body.appendChild(flake);
+        flakes.push(flake);
     }
     function addMany(limit) {
         for (let i = 0; i < limit; i++) {
@@ -21,7 +19,7 @@
     }
     function iterate() {
         addMany(10);
-        bugs.forEach(bug => {
+        flakes.forEach(bug => {
             let y = parseInt(bug.style.top.split("vh")[0]);
             if (y < 99) { y++; };
             bug.style.top = y + "vh";
