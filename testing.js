@@ -17,6 +17,7 @@ testData = [
 
 // specific one-liner without runner function
 testData.forEach((t, i) => console.log(i, testMe(...t.inputs) === t.output ? "PASS" : "FAIL"));
+
 // generic one liner definition of generic runner function
 const runner1 = (fn,ioList)=> ioList.forEach((t, i) => console.log(i, fn(...t.inputs) === t.output ? "PASS" : "FAIL"));
 runner1(testMe, testData); // use runner1
